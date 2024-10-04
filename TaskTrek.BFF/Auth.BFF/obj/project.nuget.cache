@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZoiOECfFlPq1rC18j2eAJxCgxQ8KG3cgEjiqFKe/H5ighwbRL6VEwUIZ8dhcDthB6To2UY2lT/8Dg54d1x+MGg==",
+  "success": true,
+  "projectFilePath": "/Volumes/Prometheus/Development/Full Stack/TaskTrek/TaskTrek.BFF/Auth.BFF/Auth.BFF.csproj",
+  "expectedPackageFiles": [
+    "/Users/smil/.nuget/packages/microsoft.aspnetcore.openapi/8.0.4/microsoft.aspnetcore.openapi.8.0.4.nupkg.sha512",
+    "/Users/smil/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/Users/smil/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/Users/smil/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "/Users/smil/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "/Users/smil/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "/Users/smil/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.4.0/swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+  ],
+  "logs": []
+}
