@@ -1,2 +1,13 @@
-/*/obj/*
-/*/bin/*
+# Ignore all obj folders
+**/obj/
+
+# Ignore bin folders
+**/bin/
+
+# Ignore other build and dependency files
+**/node_modules/
+**/dist/
+
+# Ignore .NET user-specific files
+*.user
+*.suo
