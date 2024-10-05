@@ -8,6 +8,8 @@
 **/node_modules/
 **/dist/
 
+**/.env
+
 # Ignore .NET user-specific files
 *.user
 *.suo

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.BFF", "Auth.BFF\Auth.BFF.csproj", "{F10203A8-9BBF-4121-93B1-E6DC70D17274}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLConnector", "SQLConnector\SQLConnector.csproj", "{811A59EF-761F-4935-89ED-17E0F1005B2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{F10203A8-9BBF-4121-93B1-E6DC70D17274}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F10203A8-9BBF-4121-93B1-E6DC70D17274}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F10203A8-9BBF-4121-93B1-E6DC70D17274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811A59EF-761F-4935-89ED-17E0F1005B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811A59EF-761F-4935-89ED-17E0F1005B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811A59EF-761F-4935-89ED-17E0F1005B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811A59EF-761F-4935-89ED-17E0F1005B2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
