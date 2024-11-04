@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "./m3-theme.scss";
+@import "./material-component-designs/mat-card.scss";
+@import "./material-component-designs/mat-form-field.scss";
+html,
+body {
+  height: 100%;
+  color: white;
+  background-color: #1c1c1e;
+}
+body {
+  margin: 0;
+}
+
+//Button scss
+
+.primary-btn {
+  min-width: 90px;
+  --mdc-filled-button-container-height: 35px;
+  --mdc-filled-button-container-shape: 8px;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
