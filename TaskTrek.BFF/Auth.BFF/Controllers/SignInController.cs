@@ -1,34 +1,31 @@
-using Microsoft.AspNetCore.Http.HttpResults;
+using Auth.BFF.ModelsFE;
+using Auth.BFF.Shared;
 using Microsoft.AspNetCore.Mvc;
-using SQLConnector.Methods;
-using SQLConnector.Tables;
 
 namespace Auth.BFF.Controllers;
 
 
 [ApiController]
 [Route("signin")]
-public class SignInController : ControllerBase
+public class SignInController(HttpClient client) : ControllerBase
 {
+    private readonly HttpClient _httpClient = client;
 
-    private readonly TestFetch _testFetch;
-
-    public SignInController(TestFetch testFetch)
-    {
-        _testFetch = testFetch;
-    }
 
     [HttpPost]
-    public async Task<IActionResult> SignIn()
+    public async Task<IActionResult> RegisterUser(UserFE user)
     {
+        var registerUserDBAPI = APIConstants.registerUserDBAPI;
 
-        var data = await _testFetch.GetTestValues();
+        var res = await _httpClient.PostAsJsonAsync(registerUserDBAPI, user);
 
-        foreach (var d in data)
+        if (res.IsSuccessStatusCode)
         {
-            System.Console.WriteLine(d.test);
+            return Ok(res);
         }
-
-        return BadRequest("not yet impelmented");
+        else
+        {
+            return BadRequest(res);
+        }
     }
 }

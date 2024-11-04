@@ -1,7 +1,4 @@
 using DotNetEnv;
-using Microsoft.EntityFrameworkCore;
-using SQLConnector.Database;
-using SQLConnector.Methods;
 
 Env.Load("../.env");
 
@@ -19,9 +16,7 @@ var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION");
 
 System.Console.WriteLine(connectionString);
 
-builder.Services.AddDbContext<DataContext>(options => options.UseMySql(serverVersion: ServerVersion.AutoDetect(connectionString), connectionString: connectionString));
-
-builder.Services.AddScoped<TestFetch>();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

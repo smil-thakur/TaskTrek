@@ -13,6 +13,7 @@ builder.Configuration.AddEnvironmentVariables();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
 var connectionString = Environment.GetEnvironmentVariable("MYSQL_CONNECTION");
 
@@ -28,7 +29,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 
 app.Run();
 
