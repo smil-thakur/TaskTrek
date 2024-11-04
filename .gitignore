@@ -13,3 +13,5 @@
 # Ignore .NET user-specific files
 *.user
 *.suo
+
+.fake
