@@ -1,0 +1,9 @@
+<mat-card tabindex="0" [ngClass]="{'severe': isSevere(), 'low': isLow(), 'medium': isMedium(), 'high': isHigh()}">
+    <mat-card-title>{{ticket.title}}</mat-card-title>
+    <mat-card-subtitle>
+        <div class="subtitle-text">
+            {{ticket.desc}}
+        </div>
+    </mat-card-subtitle>
+    <mat-card-footer>{{this.ticket.dateTime | date:'EEE MMM dd yyyy HH:mm'}}</mat-card-footer>
+</mat-card>

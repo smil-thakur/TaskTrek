@@ -1,0 +1,63 @@
+@import "../../../colors.scss";
+
+mat-card {
+  cursor: pointer;
+  --mat-card-subtitle-text-color: rgb(27, 27, 27);
+  margin: 20px;
+  width: 350px;
+  height: 260px;
+  mat-card-title {
+    color: black;
+    --mat-card-title-text-weight: bold;
+  }
+  mat-card-subtitle {
+    margin-top: 10px;
+    max-height: 90px;
+    overflow: hidden;
+
+    .subtitle-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      line-height: 23px;
+    }
+  }
+  mat-card-footer {
+    position: absolute;
+    bottom: 20px;
+    margin-top: 15px;
+    color: black;
+  }
+}
+
+mat-card.severe {
+  --mat-card-subtitle-text-color: whitesmoke;
+  mat-card-title {
+    color: white;
+  }
+
+  mat-card-footer {
+    color: white;
+  }
+
+  --mdc-elevated-card-container-color: #{$prioritySevere};
+}
+
+mat-card.medium {
+  --mdc-elevated-card-container-color: #{$priorityMedium};
+}
+mat-card.low {
+  --mdc-elevated-card-container-color: #{$priorityLow};
+}
+mat-card.high {
+  --mdc-elevated-card-container-color: #{$priorityHigh};
+}
+
+mat-card:focus {
+  box-shadow: 0px 0px 12px white;
+  border: 1px solid white;
+  outline: none;
+}

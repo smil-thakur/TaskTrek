@@ -5,6 +5,7 @@ import { MatFormField, MatLabel, MatHint } from "@angular/material/form-field"
 import { MatInput } from "@angular/material/input"
 import { LogoComponent } from '../logo/logo.component';
 import { MatButton } from "@angular/material/button"
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -23,5 +24,16 @@ import { MatButton } from "@angular/material/button"
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent {
+
+  constructor(private router: Router) { }
+
+  navigateToRegisterPage() {
+    this.router.navigate(["/register"]);
+  }
+
+  navigateToHomePage() {
+    this.router.navigate(["/home"]);
+  }
+
 
 }

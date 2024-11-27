@@ -6,13 +6,25 @@
             </div>
         </div>
         <div class="center-content">
-            <h4>Login with TaskTrek Account</h4>
+            <h4>Create your TaskTrek Account </h4>
         </div>
         <mat-form-field class="login-input" appearance="outline">
             <mat-label>
-                Username or Email
+                Username
             </mat-label>
-            <input matInput placeholder="Username or Email" value="smil.raj.thakur@gmail.com" disabled>
+            <input matInput placeholder="Email" type="text">
+        </mat-form-field>
+        <mat-form-field class="login-input" appearance="outline">
+            <mat-label>
+                Email
+            </mat-label>
+            <input matInput placeholder="Email" type="email">
+        </mat-form-field>
+        <mat-form-field class="login-input" appearance="outline">
+            <mat-label>
+                Organization
+            </mat-label>
+            <input matInput placeholder="Organization (for eg: Apple, Microsoft)" type="text">
         </mat-form-field>
         <mat-form-field class="login-input" appearance="outline">
             <mat-label>
@@ -22,13 +34,11 @@
         </mat-form-field>
         <div class="flex-1"></div>
         <div class="center-content next-btn">
-            <button (click)="navigateToHomePage()" class="primary-btn" mat-flat-button>Next</button>
+            <button class="primary-btn" mat-flat-button>Next</button>
         </div>
         <div class="flex-1"></div>
-
         <div class="other-actions">
-            <button mat-button>Forget your password?</button>
-            <button (click)="navigateToRegisterPage()" mat-button>Create TaskTrek account</button>
+            <button (click)="navigateToLoginPage()" mat-button>Already have TaskTrek account?</button>
         </div>
     </mat-card>
 </div>
