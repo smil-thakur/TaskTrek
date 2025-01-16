@@ -6,16 +6,15 @@ import { MatTooltipModule } from "@angular/material/tooltip"
 import { MatDialogRef, MatDialog } from "@angular/material/dialog"
 import { NewTicketDialogComponent } from '../../dialogs/new-ticket-dialog/new-ticket-dialog.component';
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [
-    LogoComponent,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-  ],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [
+        LogoComponent,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+    ],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 

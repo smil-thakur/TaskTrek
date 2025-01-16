@@ -9,13 +9,12 @@ import { TicketAdditional } from '../../models/TicketAdditonal';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-ticket-window',
-  standalone: true,
-  imports: [
-    CommonComponentsModule, NgFor
-  ],
-  templateUrl: './ticket-window.component.html',
-  styleUrl: './ticket-window.component.scss'
+    selector: 'app-ticket-window',
+    imports: [
+        CommonComponentsModule, NgFor
+    ],
+    templateUrl: './ticket-window.component.html',
+    styleUrl: './ticket-window.component.scss'
 })
 export class TicketWindowComponent {
 

@@ -6,11 +6,10 @@ import { PriorityColor } from '../../enums/PriorityColor';
 import { DatePipe, NgClass, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'app-ticket-card',
-  standalone: true,
-  imports: [MatCard, MatCardTitle, MatCardSubtitle, NgClass, MatCardFooter, DatePipe],
-  templateUrl: './ticket-card.component.html',
-  styleUrl: './ticket-card.component.scss'
+    selector: 'app-ticket-card',
+    imports: [MatCard, MatCardTitle, MatCardSubtitle, NgClass, MatCardFooter, DatePipe],
+    templateUrl: './ticket-card.component.html',
+    styleUrl: './ticket-card.component.scss'
 })
 export class TicketCardComponent {
   @Input() ticket!: Ticket
