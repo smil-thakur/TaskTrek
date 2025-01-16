@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @use "@angular/material" as mat;
 
-@import "./m3-theme.scss";
-@import "./material-component-designs/mat-card.scss";
-@import "./material-component-designs/mat-form-field.scss";
-@import "./colors.scss";
+@use "m3-theme.scss";
+@use "material-component-designs/mat-card.scss";
+@use "material-component-designs/mat-form-field.scss";
+@use "colors.scss";
 html,
 body {
   height: 100%;
   color: white;
-  background-color: #1c1c1e;
+  background-color: colors.$backgroundColor;
 }
 body {
   margin: 0;
