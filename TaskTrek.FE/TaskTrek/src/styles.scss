@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
 
 @import "./m3-theme.scss";
 @import "./material-component-designs/mat-card.scss";
@@ -18,8 +19,12 @@ body {
 
 .primary-btn {
   min-width: 90px;
-  --mdc-filled-button-container-height: 35px;
-  --mdc-filled-button-container-shape: 8px;
+  @include mat.button-overrides(
+    (
+      filled-container-height: 35px,
+      filled-container-shape: 8px,
+    )
+  );
 }
 
 .center-content {

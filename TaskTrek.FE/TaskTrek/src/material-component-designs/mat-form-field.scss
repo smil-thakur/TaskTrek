@@ -1,4 +1,8 @@
+@use "@angular/material" as mat;
 mat-form-field {
-  --mdc-outlined-text-field-focus-container-shape: 12px;
-  --mdc-outlined-text-field-container-shape: 12px;
+  @include mat.form-field-overrides(
+    (
+      outlined-container-shape: 12px,
+    )
+  );
 }

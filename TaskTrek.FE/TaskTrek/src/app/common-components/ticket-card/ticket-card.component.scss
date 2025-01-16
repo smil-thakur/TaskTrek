@@ -1,14 +1,24 @@
+@use "@angular/material" as mat;
+
 @import "../../../colors.scss";
 
 mat-card {
+  @include mat.card-overrides(
+    (
+      subtitle-text-color: rgb(27, 27, 27),
+    )
+  );
   cursor: pointer;
-  --mat-card-subtitle-text-color: rgb(27, 27, 27);
   margin: 20px;
   width: 350px;
   height: 260px;
   mat-card-title {
+    @include mat.card-overrides(
+      (
+        title-text-weight: bold,
+      )
+    );
     color: black;
-    --mat-card-title-text-weight: bold;
   }
   mat-card-subtitle {
     margin-top: 10px;
@@ -34,7 +44,12 @@ mat-card {
 }
 
 mat-card.severe {
-  --mat-card-subtitle-text-color: whitesmoke;
+  @include mat.card-overrides(
+    (
+      subtitle-text-color: whitesmoke,
+      elevated-container-color: $prioritySevere,
+    )
+  );
   mat-card-title {
     color: white;
   }
@@ -42,18 +57,28 @@ mat-card.severe {
   mat-card-footer {
     color: white;
   }
-
-  --mdc-elevated-card-container-color: #{$prioritySevere};
 }
 
 mat-card.medium {
-  --mdc-elevated-card-container-color: #{$priorityMedium};
+  @include mat.card-overrides(
+    (
+      elevated-container-color: $priorityMedium,
+    )
+  );
 }
 mat-card.low {
-  --mdc-elevated-card-container-color: #{$priorityLow};
+  @include mat.card-overrides(
+    (
+      elevated-container-color: $priorityLow,
+    )
+  );
 }
 mat-card.high {
-  --mdc-elevated-card-container-color: #{$priorityHigh};
+  @include mat.card-overrides(
+    (
+      elevated-container-color: $priorityHigh,
+    )
+  );
 }
 
 mat-card:focus {
