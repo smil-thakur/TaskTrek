@@ -1,0 +1,13 @@
+@use "@angular/material" as mat;
+@use "../../src/colors.scss";
+
+:root {
+  @include mat.dialog-overrides(
+    (
+      container-color: colors.$backgroundColor,
+      subhead-weight: bold,
+      subhead-size: 30px,
+      headline-padding: 10px 24px 25px,
+    )
+  );
+}

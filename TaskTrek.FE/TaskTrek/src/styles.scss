@@ -4,6 +4,7 @@
 @use "m3-theme.scss";
 @use "material-component-designs/mat-card.scss";
 @use "material-component-designs/mat-form-field.scss";
+@use "./material-component-designs/mat-dialog.scss";
 @use "colors.scss";
 html,
 body {
@@ -31,4 +32,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hint-text {
+  font-size: 12px;
+  line-height: 16px;
+  color: colors.$hintTextColor;
+}
+
+.label-form-container {
+  .form-label {
+    margin-bottom: 20px;
+  }
+  mat-hint {
+    color: colors.$hintTextColor;
+  }
 }

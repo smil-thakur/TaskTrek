@@ -1,0 +1,11 @@
+.contents {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  .hint-btn {
+    display: flex;
+    gap: 10px;
+    align-items: start;
+    flex-direction: column;
+  }
+}

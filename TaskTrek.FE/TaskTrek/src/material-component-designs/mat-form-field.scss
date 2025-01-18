@@ -1,8 +1,29 @@
 @use "@angular/material" as mat;
+@use "../colors.scss";
+
 mat-form-field {
   @include mat.form-field-overrides(
     (
       outlined-container-shape: 12px,
     )
   );
+}
+
+:root {
+  @include mat.select-overrides(
+    (
+      panel-background-color: colors.$dropdownBackground,
+    )
+  );
+  & {
+    .dropdown {
+      margin-top: 10px;
+      border-radius: 8px;
+      border-bottom-right-radius: 8px !important;
+      border-bottom-left-radius: 8px !important;
+      border-top-left-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+      margin-bottom: 10px;
+    }
+  }
 }

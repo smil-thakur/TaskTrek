@@ -15,7 +15,6 @@ import { NewTicketDialogComponent } from '../../dialogs/new-ticket-dialog/new-ti
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  standalone: true
 })
 export class HeaderComponent {
 

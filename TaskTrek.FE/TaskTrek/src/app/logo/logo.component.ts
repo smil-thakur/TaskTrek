@@ -5,7 +5,6 @@ import { Component, Input } from '@angular/core';
   imports: [],
   templateUrl: './logo.component.html',
   styleUrl: './logo.component.scss',
-  standalone: true
 })
 export class LogoComponent {
   @Input() width!: number;
