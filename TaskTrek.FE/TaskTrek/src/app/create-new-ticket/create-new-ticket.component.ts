@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { PageHeaderComponent } from "../common-components/page-header/page-header.component";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -10,41 +11,49 @@ import { operatingSystem } from '../enums/OperatingSystem';
 import { browsers } from '../enums/Browser';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+
 @Component({
   selector: 'app-create-new-ticket',
-  imports: [PageHeaderComponent, MatFormFieldModule, MatInputModule, MatSelectModule, MatStepperModule, NgFor, MatCardModule, MatButtonModule],
+  imports: [ReactiveFormsModule, PageHeaderComponent, MatFormFieldModule, MatInputModule, MatSelectModule, MatStepperModule, NgFor, MatCardModule, MatButtonModule],
   templateUrl: './create-new-ticket.component.html',
   styleUrl: './create-new-ticket.component.scss'
 })
 export class CreateNewTicketComponent {
-  osList = operatingSystem
-  deviceList = Devices
-  browserList = browsers
+  osList = operatingSystem;
+  deviceList = Devices;
+  browserList = browsers;
 
-  // export interface Ticket {
-  //     title: string,
-  //     desc: string,
-  //     steps: string,
-  //     priority: Priority,
-  //     severity: Severity,
-  //     dateTime: Date,
-  //     freq: TicketFreq,
-  //     environment: TicketEnvironment
-  //     additional: TicketAdditional | null,
-  // }
-  //   export enum Priority {
-  //     severe = 0,
-  //     high = 1,
-  //     medium = 2,
-  //     low = 3
-  // }
+  firstStepperForm: FormGroup;
+  secondStepperForm: FormGroup;
+  thirdStepperForm: FormGroup;
 
-  //   export enum Severity {
-  //     critical = 0,
-  //     major = 1,
-  //     minor = 2
-  // }
+  constructor(private fb: FormBuilder) {
+
+    this.firstStepperForm = this.fb.group({
+      ticketName: ['', Validators.required],
+      description: ['', Validators.required],
+      stepsToReplicate: ['', Validators.required],
+      priority: ['', Validators.required],
+      severity: ['', Validators.required],
+      frequency: ['', Validators.required]
+    });
+    this.secondStepperForm = this.fb.group({
+      operatingSystem: ['', Validators.required],
+      device: ['', Validators.required],
+      browser: ['', Validators.required]
+    });
+    this.thirdStepperForm = this.fb.group({
+      attachment: [],
+      logs: []
+    })
+  }
 
 
-
+  onSubmit() {
+    console.log('Form Submitted', this.firstStepperForm.value);
+    console.log('Form Submitted', this.secondStepperForm.value);
+    if (this.firstStepperForm.valid && this.secondStepperForm.valid) {
+      console.log('Form Submitted', this.firstStepperForm.value, this.secondStepperForm.value);
+    }
+  }
 }

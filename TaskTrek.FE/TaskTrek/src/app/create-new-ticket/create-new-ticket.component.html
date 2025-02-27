@@ -1,111 +1,101 @@
 <app-page-header title="Create New Ticket"></app-page-header>
 
 <mat-stepper linear="true" #stepper>
-    <mat-step label="Generic Details">
-        <div class="form-containers">
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Name your ticket.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Enter name of the ticket</mat-label>
-                    <input matInput required />
-                    <!-- @if (email.invalid) {
-                        <mat-error>{{errorMessage()}}</mat-error>
-                        } -->
-                    <mat-hint>for eg: UI of checkbox at focus broken</mat-hint>
-
-                </mat-form-field>
-            </div>
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Describe the incident.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Describe the problem or issue</mat-label>
-                    <textarea matInput required></textarea>
-                    <!-- @if (email.invalid) {
-                        <mat-error>{{errorMessage()}}</mat-error>
-                        } -->
-                    <mat-hint>for eg: checkbox is not responsive and not clickable</mat-hint>
-
-                </mat-form-field>
-
-            </div>
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Steps to replicate.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Describe the steps or process to replicate the issue or problem</mat-label>
-                    <textarea matInput required></textarea>
-                    <!-- @if (email.invalid) {
-                        <mat-error>{{errorMessage()}}</mat-error>
-                        } -->
-                    <mat-hint>for eg: 1: login as admin 2: Create new page 3: Click checkbox for always visible
-                        and observe</mat-hint>
-
-                </mat-form-field>
-
-            </div>
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Set priority of the ticket.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Priority</mat-label>
-                    <mat-select panelClass="dropdown">
-                        <mat-option value="severe">Severe</mat-option>
-                        <mat-option value="hight">High</mat-option>
-                        <mat-option value="medium">Medium</mat-option>
-                        <mat-option value="low">Low</mat-option>
-                    </mat-select>
-                    <mat-hint>This gives intuition for which ticket to work first or last.</mat-hint>
-
-                </mat-form-field>
-            </div>
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Set Severity of the ticket.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Severity</mat-label>
-                    <mat-select panelClass="dropdown">
-                        <mat-option value="critical">Critical</mat-option>
-                        <mat-option value="major">Major</mat-option>
-                        <mat-option value="minor">minor</mat-option>
-                    </mat-select>
-                    <mat-hint>This gives intuition for the impact of the ticket on the environment.</mat-hint>
-
-                </mat-form-field>
-            </div>
-            <div class="label-form-container">
-                <div class="form-label hint-text">
-                    Set Frequency of the ticket.
-                </div>
-                <mat-form-field class="ticket-name-form" appearance="outline">
-                    <mat-label>Frequency</mat-label>
-                    <mat-select panelClass="dropdown">
-                        <mat-option value="often">Often</mat-option>
-                        <mat-option value="sometimes">Sometimes</mat-option>
-                        <mat-option value="rarely">Rarely</mat-option>
-                    </mat-select>
-                    <mat-hint>This gives intuition for the occurence of the issue on the environment.</mat-hint>
-
-                </mat-form-field>
-            </div>
-        </div>
-    </mat-step>
-    <mat-step label="Environment">
-        <form>
+    <mat-step label="Generic Details" [stepControl]="firstStepperForm">
+        <form [formGroup]="firstStepperForm">
             <div class="form-containers">
                 <div class="label-form-container">
                     <div class="form-label hint-text">
-                        Os this issue was found on.
+                        Name your ticket.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Enter name of the ticket</mat-label>
+                        <input matInput formControlName="ticketName" required />
+                        <mat-hint>for eg: UI of checkbox at focus broken</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        Describe the incident.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Describe the problem or issue</mat-label>
+                        <textarea matInput formControlName="description" required></textarea>
+
+                        <mat-hint>for eg: checkbox is not responsive and not clickable</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        Steps to replicate.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Describe the steps or process to replicate the issue or problem</mat-label>
+                        <textarea matInput formControlName="stepsToReplicate" required></textarea>
+
+                        <mat-hint>for eg: 1: login as admin 2: Create new page 3: Click checkbox for always visible and
+                            observe</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        Set priority of the ticket.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Priority</mat-label>
+                        <mat-select formControlName="priority" required panelClass="dropdown">
+                            <mat-option value="severe">Severe</mat-option>
+                            <mat-option value="high">High</mat-option>
+                            <mat-option value="medium">Medium</mat-option>
+                            <mat-option value="low">Low</mat-option>
+                        </mat-select>
+                        <mat-hint>This gives intuition for which ticket to work first or last.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        Set Severity of the ticket.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Severity</mat-label>
+                        <mat-select formControlName="severity" required panelClass="dropdown">
+                            <mat-option value="critical">Critical</mat-option>
+                            <mat-option value="major">Major</mat-option>
+                            <mat-option value="minor">Minor</mat-option>
+                        </mat-select>
+                        <mat-hint>This gives intuition for the impact of the ticket on the environment.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        Set Frequency of the ticket.
+                    </div>
+                    <mat-form-field class="ticket-name-form" appearance="outline">
+                        <mat-label>Frequency</mat-label>
+                        <mat-select formControlName="frequency" required panelClass="dropdown">
+                            <mat-option value="often">Often</mat-option>
+                            <mat-option value="sometimes">Sometimes</mat-option>
+                            <mat-option value="rarely">Rarely</mat-option>
+                        </mat-select>
+                        <mat-hint>This gives intuition for the occurrence of the issue on the environment.</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step label="Environment" [stepControl]="secondStepperForm">
+        <form [formGroup]="secondStepperForm">
+            <div class="form-containers">
+                <div class="label-form-container">
+                    <div class="form-label hint-text">
+                        OS this issue was found on.
                     </div>
                     <mat-form-field class="ticket-name-form" appearance="outline">
                         <mat-label>Operating System</mat-label>
-                        <mat-select panelClass="dropdown">
+                        <mat-select formControlName="operatingSystem" required panelClass="dropdown">
                             <mat-option value="generic">Generic</mat-option>
                             <mat-option *ngFor="let os of osList" [value]="os">{{os}}</mat-option>
                         </mat-select>
@@ -117,7 +107,7 @@
                     </div>
                     <mat-form-field class="ticket-name-form" appearance="outline">
                         <mat-label>Device</mat-label>
-                        <mat-select panelClass="dropdown">
+                        <mat-select formControlName="device" required panelClass="dropdown">
                             <mat-option value="generic">Generic</mat-option>
                             <mat-option *ngFor="let device of deviceList" [value]="device">{{device}}</mat-option>
                         </mat-select>
@@ -128,45 +118,55 @@
                         Browser this issue was found on.
                     </div>
                     <mat-form-field class="ticket-name-form" appearance="outline">
-                        <mat-label>Device</mat-label>
-                        <mat-select panelClass="dropdown">
+                        <mat-label>Browser</mat-label>
+                        <mat-select formControlName="browser" required panelClass="dropdown">
                             <mat-option value="generic">Generic</mat-option>
                             <mat-option *ngFor="let browser of browserList" [value]="browser">{{browser}}</mat-option>
                         </mat-select>
                     </mat-form-field>
                 </div>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
             </div>
         </form>
     </mat-step>
     <mat-step label="Additional">
-        <!-- MatCard for Screenshots -->
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>Upload Screenshots</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <div class="drag-drop-area">
-                    Drag and drop your screenshots here
-                </div>
-                <button mat-flat-button class="primary-btn">
-                    Select Files
-                </button>
-            </mat-card-content>
-        </mat-card>
+        <form [formGroup]="thirdStepperForm">
+            <!-- MatCard for Screenshots -->
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title>Upload Screenshots</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="drag-drop-area">
+                        Drag and drop your screenshots here
+                    </div>
+                    <button mat-flat-button class="primary-btn">
+                        Select Files
+                    </button>
+                </mat-card-content>
+            </mat-card>
 
-        <!-- MatCard for Log Files -->
-        <mat-card class="card">
-            <mat-card-header>
-                <mat-card-title>Upload Log Files</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <div class="drag-drop-area">
-                    Drag and drop your log files here
-                </div>
-                <button mat-flat-button class="primary-btn">
-                    Select Files
-                </button>
-            </mat-card-content>
-        </mat-card>
+            <!-- MatCard for Log Files -->
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title>Upload Log Files</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="drag-drop-area">
+                        Drag and drop your log files here
+                    </div>
+                    <button mat-flat-button class="primary-btn">
+                        Select Files
+                    </button>
+                </mat-card-content>
+            </mat-card>
+            <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="onSubmit()">Submit</button>
+            </div>
+        </form>
     </mat-step>
 </mat-stepper>
